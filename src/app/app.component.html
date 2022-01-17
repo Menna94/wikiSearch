@@ -1,4 +1,5 @@
 <div class="container">
+    <h2 class="title is-1 is-center">Look For Articles In Wikipedia</h2>
     <app-searchbar (submitted)="onTerm($event)"></app-searchbar>
     <app-page-list [pages]="pages" *ngIf="pages.length"></app-page-list>
 </div>
