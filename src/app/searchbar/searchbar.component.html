@@ -1,4 +1,9 @@
-<form (submit)="onFormSubmit($event)">
-    <input (input) = "term = $event.target.value">
-    <button>Enter</button>
-</form>
+<div class="box">
+    <form (submit)="onFormSubmit($event)">
+        <div class="control" [ngClass]="spinner? 'is-loading': ''">
+            <input (keypress)="onkeyPress($event)" (input) = "term = $event.target.value" class="input is-rounded" placeholder="Enter Search Term">
+        </div>
+        <button class="button is-primary">Enter</button>
+    </form>
+</div>
+

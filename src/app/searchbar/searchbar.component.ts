@@ -8,6 +8,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SearchbarComponent implements OnInit {
   @Output() submitted = new EventEmitter<string>();
   term:string;
+  spinner:boolean;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,6 +19,14 @@ export class SearchbarComponent implements OnInit {
     event.preventDefault();
     // console.log(this.term);
     this.submitted.emit(this.term);
+    this.spinner = false;
+
+  }
+
+  onkeyPress(event: KeyboardEvent) {
+    this.spinner = true;
   }
 
 }
+
+  

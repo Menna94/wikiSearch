@@ -11,12 +11,14 @@ class Car{
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  pages = [];
   constructor(private wiki:WikipediaService, private car:Car){}
 
   onTerm(term:string){
-    const res = this.wiki.search(term);
-    console.log(res);
-    console.log(this.car.color);
+    this.wiki.search(term)
+    .subscribe((res:any)=>{
+      this.pages = res.query.search;
+    })
     
   }
 }
