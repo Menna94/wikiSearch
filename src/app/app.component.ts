@@ -16,8 +16,8 @@ export class AppComponent {
 
   onTerm(term:string){
     this.wiki.search(term)
-    .subscribe((res:any)=>{
-      this.pages = res.query.search;
+    .subscribe((pages)=>{
+      this.pages = pages;
     })
     
   }
